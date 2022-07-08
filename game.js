@@ -1,3 +1,4 @@
+//displays the computer's play
 function computerPlay(){
     let rock = 'Rock'
     let paper = 'Paper'
@@ -10,8 +11,8 @@ function computerPlay(){
     return randomPlay
 }
 
-console.log(computerPlay())
 
+//play a round
 function playRound(playerSelection, computerSelection){
     let player = playerSelection.toLowerCase()
     let computer = computerSelection.toLowerCase()
@@ -61,4 +62,13 @@ function playRound(playerSelection, computerSelection){
         }
     }
 }
-console.log(playRound('rock', computerPlay()))
+
+//play a set of rounds(here 5 rounds)
+function game(){
+    for (let i = 0; i < 5; i++){
+        let myPlay = prompt("Rock Paper Scissors: ")
+        let result = playRound(myPlay, computerPlay())
+        console.log(result)
+    }
+}
+game()
