@@ -12,6 +12,9 @@ function computerPlay(){
 }
 
 
+let playerCount = 0;
+let computerCount = 0;
+
 //play a round
 function playRound(playerSelection, computerSelection){
     let player = playerSelection.toLowerCase()
@@ -19,46 +22,52 @@ function playRound(playerSelection, computerSelection){
 
     if (player == 'rock'){
         if (computer == 'scissors'){
-            let str = `You Win! ${player} beats ${computer}`
-            return str
+            let str = `You Win! ${player} beats ${computer}`;
+            playerCount += 1;
+            return str;
         }
         else if(computer == 'paper'){
-            let str = `You Lose! ${computer} beats ${player}`
-            return str
+            let str = `You Lose! ${computer} beats ${player}`;
+            computerCount += 1;
+            return str;
         }
         else{
-            let str = 'No Winner! Play again'
-            return str
+            let str = 'No Winner! Play again';
+            return str;
         }
     }
 
     else if (player == 'scissors'){
         if (computer == 'paper'){
-            let str = `You Win! ${player} beats ${computer}`
-            return str
+            let str = `You Win! ${player} beats ${computer}`;
+            playerCount += 1;
+            return str;
         }
         else if (computer == 'rock'){
-            let str = `You Lose! ${computer} beats ${player}`
-            return str
+            let str = `You Lose! ${computer} beats ${player}`;
+            computerCount += 1;
+            return str;
         }
         else{
-            let str = 'No Winner! Play again'
-            return str
+            let str = 'No Winner! Play again';
+            return str;
         }
     }
 
     else{
         if (computer == 'rock'){
-            let str = `You Win! ${player} beats ${computer}`
-            return str
+            let str = `You Win! ${player} beats ${computer}`;
+            playerCount += 1;
+            return str;
         }
         else if (computer == 'scissors'){
-            let str = `You Lose! ${computer} beats ${player}`
-            return str
+            let str = `You Lose! ${computer} beats ${player}`;
+            computerCount += 1;
+            return str;
         }
         else{
-            let str = 'No Winner! Play again'
-            return str
+            let str = 'No Winner! Play again';
+            return str;
         }
     }
 }
@@ -78,6 +87,8 @@ const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
 
 /* rock.addEventListener('click', () => {alert("Rock works")}) */
+
+// Convert the contents into strings
 let rockStr = rock.textContent;
 let paperStr = paper.textContent;
 let scissorsStr = scissors.textContent;
@@ -92,20 +103,49 @@ paper.addEventListener('click', () => console.log(playRound(paperStr, computerPl
 scissors.addEventListener('click', () => console.log(playRound(scissorsStr, computerPlay()))); */
 
 
-onst div = document.querySelector('#results');
-
+const div = document.querySelector('#results');
 
 rock.addEventListener('click', () => {const logs = document.createElement('p');
     logs.textContent = playRound(rockStr, computerPlay()); // playRound returns a string
-    div.appendChild(logs)});
+    div.appendChild(logs);
+    if (playerCount == 5){
+        const para = document.createElement('h2');
+        para.textContent = 'You Win!';
+        div.appendChild(para);
+    }
+    else if (computerCount == 5){
+        const para = document.createElement('h2');
+        para.textContent = 'You lose! Computer wins.';
+        div.appendChild(para);
+    }});
 
 paper.addEventListener('click', () => {const logs = document.createElement('p');
     logs.textContent = playRound(paperStr, computerPlay()); // playRound returns a string
-    div.appendChild(logs)});
+    div.appendChild(logs);
+    if (playerCount == 5){
+        const para = document.createElement('h2');
+        para.textContent = 'You Win!';
+        div.appendChild(para);
+    }
+    else if (computerCount == 5){
+        const para = document.createElement('h2');
+        para.textContent = 'You lose! Computer wins.';
+        div.appendChild(para);
+    }});
 
 scissors.addEventListener('click', () => {const logs = document.createElement('p');
     logs.textContent = playRound(scissorsStr, computerPlay()); // playRound returns a string
-    div.appendChild(logs)});
+    div.appendChild(logs);
+    if (playerCount == 5){
+        const para = document.createElement('h2');
+        para.textContent = 'You Win!';
+        div.appendChild(para);
+    }
+    else if (computerCount == 5){
+        const para = document.createElement('h2');
+        para.textContent = 'You lose! Computer wins.';
+        div.appendChild(para);
+    }});
 
 
-
+    
