@@ -17,8 +17,8 @@ let computerCount = 0;
 
 //play a round
 function playRound(playerSelection, computerSelection){
-    let player = playerSelection.toLowerCase()
-    let computer = computerSelection.toLowerCase()
+    let player = playerSelection.toLowerCase();
+    let computer = computerSelection.toLowerCase();
 
     if (player == 'rock'){
         if (computer == 'scissors'){
@@ -86,30 +86,19 @@ const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
 
-/* rock.addEventListener('click', () => {alert("Rock works")}) */
 
 // Convert the contents into strings
-let rockStr = rock.textContent;
-let paperStr = paper.textContent;
-let scissorsStr = scissors.textContent;
 
-/* console.log(rock);
-console.log(rockStr);
-console.log(paperStr);
-console.log(scissorsStr); */
-
-/* rock.addEventListener('click', () => console.log(playRound(rockStr, computerPlay())));
-paper.addEventListener('click', () => console.log(playRound(paperStr, computerPlay())));
-scissors.addEventListener('click', () => console.log(playRound(scissorsStr, computerPlay()))); */
 
 
 const div = document.querySelector('#results');
 
-const playerScore = document.querySelector('#player');
-const computerScore = document.querySelector('#computer');
+const playerScore = document.querySelector('#player-score');
+const computerScore = document.querySelector('#computer-score');
 
+//addEventListener with multiple functionalities
 rock.addEventListener('click', () => {const logs = document.createElement('p');
-    logs.textContent = playRound(rockStr, computerPlay()); // playRound returns a string
+    logs.textContent = playRound('rock', computerPlay());// playRound returns a string
     div.appendChild(logs);
     if (playerCount == 5){
         const para = document.createElement('h2');
@@ -125,7 +114,7 @@ rock.addEventListener('click', () => {const logs = document.createElement('p');
     computerScore.textContent = `Computer: ${computerCount}`;});
 
 paper.addEventListener('click', () => {const logs = document.createElement('p');
-    logs.textContent = playRound(paperStr, computerPlay()); // playRound returns a string
+    logs.textContent = playRound('paper', computerPlay()); // playRound returns a string
     div.appendChild(logs);
     if (playerCount == 5){
         const para = document.createElement('h2');
@@ -141,7 +130,7 @@ paper.addEventListener('click', () => {const logs = document.createElement('p');
     computerScore.textContent = `Computer: ${computerCount}`;});
 
 scissors.addEventListener('click', () => {const logs = document.createElement('p');
-    logs.textContent = playRound(scissorsStr, computerPlay()); // playRound returns a string
+    logs.textContent = playRound('scissors', computerPlay()); // playRound returns a string
     div.appendChild(logs);
     if (playerCount == 5){
         const para = document.createElement('h2');
