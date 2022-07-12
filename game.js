@@ -33,11 +33,11 @@ function playRound(playerSelection, computerSelection){
     }
 
     else if (player == 'scissors'){
-        if (computer = 'paper'){
+        if (computer == 'paper'){
             let str = `You Win! ${player} beats ${computer}`
             return str
         }
-        else if (computer = 'rock'){
+        else if (computer == 'rock'){
             let str = `You Lose! ${computer} beats ${player}`
             return str
         }
@@ -80,11 +80,32 @@ const scissors = document.querySelector('#scissors');
 /* rock.addEventListener('click', () => {alert("Rock works")}) */
 let rockStr = rock.textContent;
 let paperStr = paper.textContent;
-let scissorsStr = scissors.textContent.toLowerCase();
+let scissorsStr = scissors.textContent;
 
-console.log(rock);
+/* console.log(rock);
 console.log(rockStr);
 console.log(paperStr);
-console.log(scissorsStr);
+console.log(scissorsStr); */
 
-rock.addEventListener('click', () => console.log(playRound(rockStr, computerPlay())));
+/* rock.addEventListener('click', () => console.log(playRound(rockStr, computerPlay())));
+paper.addEventListener('click', () => console.log(playRound(paperStr, computerPlay())));
+scissors.addEventListener('click', () => console.log(playRound(scissorsStr, computerPlay()))); */
+
+
+onst div = document.querySelector('#results');
+
+
+rock.addEventListener('click', () => {const logs = document.createElement('p');
+    logs.textContent = playRound(rockStr, computerPlay()); // playRound returns a string
+    div.appendChild(logs)});
+
+paper.addEventListener('click', () => {const logs = document.createElement('p');
+    logs.textContent = playRound(paperStr, computerPlay()); // playRound returns a string
+    div.appendChild(logs)});
+
+scissors.addEventListener('click', () => {const logs = document.createElement('p');
+    logs.textContent = playRound(scissorsStr, computerPlay()); // playRound returns a string
+    div.appendChild(logs)});
+
+
+
