@@ -64,11 +64,11 @@ function playRound(playerSelection, computerSelection){
 }
 
 //play a set of rounds(here 5 rounds)
-function game(){
+/* function game(){
     for (let i = 0; i < 5; i++){
         let myPlay = prompt("Rock Paper Scissors: ")
         let result = playRound(myPlay, computerPlay())
         console.log(result)
     }
 }
-game()
+game() */
