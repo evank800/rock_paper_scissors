@@ -105,6 +105,9 @@ scissors.addEventListener('click', () => console.log(playRound(scissorsStr, comp
 
 const div = document.querySelector('#results');
 
+const playerScore = document.querySelector('#player');
+const computerScore = document.querySelector('#computer');
+
 rock.addEventListener('click', () => {const logs = document.createElement('p');
     logs.textContent = playRound(rockStr, computerPlay()); // playRound returns a string
     div.appendChild(logs);
@@ -116,8 +119,10 @@ rock.addEventListener('click', () => {const logs = document.createElement('p');
     else if (computerCount == 5){
         const para = document.createElement('h2');
         para.textContent = 'You lose! Computer wins.';
-        div.appendChild(para);
-    }});
+        div.appendChild(para);     
+    };
+    playerScore.textContent = `You: ${playerCount}`;
+    computerScore.textContent = `Computer: ${computerCount}`;});
 
 paper.addEventListener('click', () => {const logs = document.createElement('p');
     logs.textContent = playRound(paperStr, computerPlay()); // playRound returns a string
@@ -131,7 +136,9 @@ paper.addEventListener('click', () => {const logs = document.createElement('p');
         const para = document.createElement('h2');
         para.textContent = 'You lose! Computer wins.';
         div.appendChild(para);
-    }});
+    };
+    playerScore.textContent = `You: ${playerCount}`;
+    computerScore.textContent = `Computer: ${computerCount}`;});
 
 scissors.addEventListener('click', () => {const logs = document.createElement('p');
     logs.textContent = playRound(scissorsStr, computerPlay()); // playRound returns a string
@@ -145,7 +152,9 @@ scissors.addEventListener('click', () => {const logs = document.createElement('p
         const para = document.createElement('h2');
         para.textContent = 'You lose! Computer wins.';
         div.appendChild(para);
-    }});
+    };
+    playerScore.textContent = `You: ${playerCount}`;
+    computerScore.textContent = `Computer: ${computerCount}`;});
 
 
     
