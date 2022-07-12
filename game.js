@@ -72,3 +72,19 @@ function playRound(playerSelection, computerSelection){
     }
 }
 game() */
+
+const rock = document.querySelector('#rock');
+const paper = document.querySelector('#paper');
+const scissors = document.querySelector('#scissors');
+
+/* rock.addEventListener('click', () => {alert("Rock works")}) */
+let rockStr = rock.textContent;
+let paperStr = paper.textContent;
+let scissorsStr = scissors.textContent.toLowerCase();
+
+console.log(rock);
+console.log(rockStr);
+console.log(paperStr);
+console.log(scissorsStr);
+
+rock.addEventListener('click', () => console.log(playRound(rockStr, computerPlay())));
